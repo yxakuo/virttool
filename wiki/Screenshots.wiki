@@ -1,0 +1,6 @@
+#labels screenshots
+Screenshots of the web application in action.
+
+= Introduction =
+
+To be added soon!
