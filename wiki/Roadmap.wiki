@@ -5,7 +5,8 @@
 
 Version 0.2
 
-* Activate automatic migration and domain [daemon relocation] on server
-* Introduce [WebConsole], to make it possible to access a domain console from the web interface
-* [attachment Live] attachment of devices, permitting the adition of a block or network device without rebooting a [domain domain]
+  * Activate automatic migration and domain [daemon relocation] on server
 
+  * Introduce [WebConsole], to make it possible to access a domain console from the web interface
+
+  * [attachment Live] attachment of devices, permitting the adition of a block or network device without rebooting a [domain domain]
