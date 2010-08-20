@@ -64,13 +64,14 @@ def get_domain_dict(XML,exclude=['uuid','devices']):
                             if ot.localName == 'type':
                                 domain['os_%s' %ot.localName] = ot.childNodes[0].nodeValue
                                 if ot.getAttribute('arch'):
-                                    domain['os_%s' %ot.localName] = ot.getAttribute('arch')
+                                    domain['os_arch'] = ot.getAttribute('arch')
                                 if ot.getAttribute('machine'):
-                                    domain['os_%s' %ot.localName] = ot.getAttribute('machine')
+                                    domain['os_machine'] = ot.getAttribute('machine')
                             elif ot.localName == 'boot':
                                 domain['os_%s' %ot.localName] = ot.getAttribute('dev')
                             else:
-                                domain['os_%s' %ot.localName] = ot.childNodes[0].nodeValue       
+                                domain['os_%s' %ot.localName] = ot.childNodes[0].nodeValue  
+         
     return domain
     
 
