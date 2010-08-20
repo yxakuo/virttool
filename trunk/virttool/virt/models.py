@@ -346,4 +346,41 @@ class Device(models.Model):
         ordering = 'type',
         verbose_name = _('Device')
         verbose_name_plural = (_('Devices'))
+        
+        
+#
+# Graphics Domain 
+#
 
+class GraphDomain(models.Model):
+    domain = models.ForeignKey(Domain, verbose_name=_('Domain'))
+    img = models.URLField(verify_exists=False)
+    description = models.CharField(_('Descrption'), max_length=100)
+    
+    def __unicode__(self):
+        return self.description
+    
+    class Meta: 
+        verbose_name = _('Graph')
+        verbose_name_plural = (_('Graphics of Domain'))
+        
+
+#
+# Graphics Node
+#
+
+class GraphNode(models.Model):
+    node = models.ForeignKey(Node, verbose_name=_('Domain'))
+    img = models.URLField(verify_exists=False)
+    description = models.CharField(_('Descrption'), max_length=100)
+
+    def __unicode__(self):
+        return self.description
+
+    class Meta: 
+        verbose_name = _('Graph')
+        verbose_name_plural = (_('Graphics of Node'))
+                        
+        
+        
+        

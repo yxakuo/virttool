@@ -35,9 +35,8 @@
 	  	
         <div class="post_meta" style="font-size: 12px;">
             <h3> Domain Info </h3>
+             Node: <a href="{% url node_edit domain.node.id %}"> {{ domain.node.name }} </a> <br/>
     	     Last State {{ domain.get_state_display }} <br/>
-    	     
-    	     <br/>
     	     <br/>
     	     
 

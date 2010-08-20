@@ -54,8 +54,17 @@ def add(request):
 
 def edit(request,id):
     node = get_object_or_404(models.Node, pk=id)
+    libvirtnode, error_ = node.getlibvirt()
+    domainslist = []
+    for domain in node.domain_set.all():
+        domainslist.append(dict(domain=domain,libvirtdomain=domain.getlibvirt(libvirtnode) if libvirtnode else None))
+                
     form = forms.NodeForm(instance=node)    
-    return render_to_response('virt/nodeedit.html', {'form': form, 'node': node, 'URIHELP': models.DRIVERS_DESCRIPTION }, 
+    return render_to_response('virt/nodeedit.html', {'form': form, 
+                                                     'node': node,  
+                                                     'domains': domainslist, 
+                                                     'domains_count': len(domainslist),
+                                                     'URIHELP': models.DRIVERS_DESCRIPTION }, 
                                         context_instance=RequestContext(request))    
 
 def delete(request,id):
