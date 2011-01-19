@@ -16,6 +16,10 @@
     <script src="/static/js/jquery-ui/jquery.ui.all.js" type="text/javascript"></script>
     <script src="/static/js/jquery-validate/cmxforms.js" type="text/javascript"></script>
     
+    <style type="text/css" media="screen">
+            #q {  width: 300px; }
+    </style>
+
     
     <script>
 
@@ -79,6 +83,16 @@
 					<li id="nodeop"><a href="{% url node_get %}">{% trans "Nodes" %}</a></li>
 					<li id="domainop"><a href="{% url domain_get %}">{% trans "Domains" %}</a></li>
 				</ul>
+
+         <div id="formsearch" style="width: 400px; float: right; position: relative; top: 10px;">
+             <form class="formx" action="{% url domain_get %}" method="get">
+
+                 <input type="text" name="q" value="" id="q"/>
+                  <input style="float: right;" class="form_bt_adicionar" type="submit" value="Search"/>
+
+              </form>
+          </div>
+
 
 				<div class="clearer">&nbsp;</div>
 
